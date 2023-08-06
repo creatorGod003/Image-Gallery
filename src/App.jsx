@@ -49,7 +49,7 @@ function App() {
     <div className="container flex-col items-center ">
       <header className="bg-blue-200 ">
         <h1 className="text-center text-3xl py-4 font-serif">
-          Image Galary
+          Image Gallery
         </h1>
         <ImageSearch onTermChange={setTerm} inputRef={ref} />
       </header>

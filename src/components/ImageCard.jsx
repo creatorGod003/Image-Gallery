@@ -13,7 +13,7 @@ const ImageCard = ({ image }) => {
         <div className="font-bold text-blue-500 text-xl">
           Photo by {image.user}
         </div>
-        <Features/>
+        <Features image={image}/>
         <ul>
           <li>
             <strong>Views: </strong>

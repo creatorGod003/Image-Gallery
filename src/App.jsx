@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import ImageCard from "./components/ImageCard.jsx";
 import ImageSearch from "./components/ImageSearch";
 import Pagination from "./components/Pagination";
+import Footer from "./components/Footer";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -68,7 +69,7 @@ function App() {
       )}
 
       <Pagination currentPage={currentPage} moveForward={moveForward} moveBackward={moveBackward}/>
-    
+        <Footer/>
     </div>
     
   );

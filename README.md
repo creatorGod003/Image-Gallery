@@ -12,7 +12,7 @@ Welcome to the Image Gallery repository! This project showcases an interactive i
 
 ## Demo
 
-Before diving into the repository, check out the live demo of the image gallery [here](https://your-demo-url.com).
+Before diving into the repository, check out the live demo of the image gallery [here](https://image-gallery-a54i4kezj-creatorgod003.vercel.app/).
 
 ## Features
 

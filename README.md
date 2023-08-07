@@ -21,6 +21,7 @@ Before diving into the repository, check out the live demo of the image gallery 
 - **Responsive Layout:** Enjoy a seamless experience on various devices, including desktops, tablets, and mobile phones.
 - **Copy Image URL:** Easily copy the URL of any image to share it with others or use it in your projects.
 - **Download Image:** Download any image directly from the gallery with a simple click.
+- **Dark Mode:** Enjoy seemless experience of dark mode along with light and system default modes. 
 
 ## Installation
 

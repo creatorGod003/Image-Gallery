@@ -6,7 +6,7 @@ const ImageCard = ({ image }) => {
   const tags = image.tags.split(", ");
 
   return (
-    <div className="max-w-sm rounded shadow-lg dark:bg-slate-800 dark:shadow-md dark:shadow-gray-500">
+    <div className="max-w-sm rounded shadow-lg dark:bg-slate-800 dark:shadow-md dark:shadow-gray-500 h-full">
       <img
         src={image.webformatURL}
         alt=""

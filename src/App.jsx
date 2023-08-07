@@ -4,6 +4,7 @@ import ImageCard from "./components/ImageCard.jsx";
 import ImageSearch from "./components/ImageSearch";
 import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
+import Theme from "./components/Theme";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -11,25 +12,24 @@ function App() {
   const [term, setTerm] = useState("image");
   const apikey = import.meta.env.VITE_PIXABAY_API_KEY;
   const ref = useRef(null);
-  const [currentPage, setCurrentPage] = useState(1)
-  const [showPagination, setShowPagination] =useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showPagination, setShowPagination] = useState(false);
 
-  function moveForward(){
-    setCurrentPage(currentPage+1);
-    if(currentPage==3){
+  function moveForward() {
+    setCurrentPage(currentPage + 1);
+    if (currentPage == 3) {
       return;
     }
-    setCurrentPage(currentPage+1);
+    setCurrentPage(currentPage + 1);
   }
-  function moveBackward(){
-    if(currentPage==1){
+  function moveBackward() {
+    if (currentPage == 1) {
       return;
     }
-    setCurrentPage(currentPage-1);
+    setCurrentPage(currentPage - 1);
   }
 
   useEffect(() => {
-
     fetch(
       `https://pixabay.com/api/?key=${apikey}&q=${term}&image_type=photo&pretty=true&per_page=12&page=${currentPage}`
     )
@@ -37,30 +37,34 @@ function App() {
         return res.json();
       })
       .then((data) => {
-        // console.log(data.hits)
         setImages(data.hits);
         setIsLoading(false);
-        if(data.hits.length==0)setShowPagination(false);
-        else setShowPagination(true)
+        if (data.hits.length == 0) setShowPagination(false);
+        else setShowPagination(true);
       })
       .catch(() => {
         // console.log(err);
       });
     ref.current.focus();
-  }, [apikey, term,currentPage, showPagination]);
+  }, [apikey, term, currentPage, showPagination]);
 
   return (
-    <div className="container flex-col items-center ">
-      <header className="bg-blue-200">
-        <h1 className="text-center text-3xl py-4 font-serif">
+    <div className="flex-col items-center dark:bg-slate-900 duration-300">
+      <Theme />
+      <header className="bg-blue-200 dark:bg-slate-900">
+        <h1 className="text-center text-3xl py-4 font-serif dark:text-gray-100">
           Image Gallery
         </h1>
-        <ImageSearch onTermChange={setTerm} inputRef={ref} />
+        <ImageSearch
+          onTermChange={setTerm}
+          setCurrentPage={setCurrentPage}
+          inputRef={ref}
+        />
       </header>
       {isLoading ? (
         <h1 className="text-3xl text-center  my-10">Loading...</h1>
       ) : images.length != 0 ? (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1 gap-4 place-items-top">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1 gap-4 place-items-top my-20">
           {images.map((image) => {
             return <ImageCard key={image.id} image={image} />;
           })}
@@ -72,12 +76,15 @@ function App() {
         </h1>
       )}
 
-      {
-        showPagination?<Pagination currentPage={currentPage} moveBackward={moveBackward} moveForward={moveForward}/>:null
-      }
-        <Footer/>
+      {showPagination ? (
+        <Pagination
+          currentPage={currentPage}
+          moveBackward={moveBackward}
+          moveForward={moveForward}
+        />
+      ) : null}
+      <Footer />
     </div>
-    
   );
 }
 

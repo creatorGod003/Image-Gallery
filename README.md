@@ -3,6 +3,7 @@
 Welcome to the Image Gallery repository! This project showcases an interactive image gallery with the ability to copy image URLs and download the images directly from the gallery. Additionally, the gallery boasts a responsive layout, ensuring a seamless experience across various devices.
 
 ## Table of Contents
+
 - [Demo](#demo)
 - [Features](#features)
 - [Installation](#installation)
@@ -27,24 +28,25 @@ To run the image gallery locally on your machine, follow these simple steps:
 
 1. **Clone the Repository:**
 
-
-~~~
+```
 git clone https://github.com/your-username/image-gallery.git
 cd image-gallery
-~~~
+```
+
 2. **Install Dependencies:**
-~~~
+
+```
 npm install
-~~~
+```
 
 3. **Run the Development Server:**
-~~~
-npm start dev
-~~~
 
+```
+npm start dev
+```
 
 4. **Open Your Browser:**
-Visit `http://localhost:5174` to view the image gallery.
+   Visit `http://localhost:5174` to view the image gallery.
 
 ## Usage
 

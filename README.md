@@ -59,8 +59,6 @@ Once the image gallery is up and running, you can:
 - Hover over an image and click the "Copy URL" button to copy the image's URL to your clipboard.
 - Click the "Download" button to download the image directly to your device.
 
-Feel free to customize and add your own images to the gallery to personalize the experience!
-
 ## Contributing
 
 We welcome contributions to this repository! If you find any bugs, have suggestions for new features, or want to improve the existing code, please follow these steps:
